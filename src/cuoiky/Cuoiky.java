@@ -40,8 +40,8 @@ public class Cuoiky {
               System.out.println(new_model.testset.toSummaryString());
               //Export file arff from data testset
               ArffSaver exportData = new ArffSaver();
-              exportData.setInstances(new_model.testset);
-              exportData.setFile(new File("D:\\testset.arff"));
+              exportData.setInstances(new_model.trainset);
+              exportData.setFile(new File("D:\\Document\\UIT\\2019-2020\\KTDLUD\\cuoiky\\trainset.arff"));
               exportData.writeBatch();
    }
 }

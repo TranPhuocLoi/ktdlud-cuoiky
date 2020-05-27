@@ -5,6 +5,12 @@
  */
 package cuoiky;
 
+import java.io.File;
+import java.io.FileWriter;
+import static java.lang.Math.log;
+import static java.time.Clock.system;
+import weka.core.converters.ArffSaver;
+
 /**
  *
  * @author nudo350
@@ -32,5 +38,10 @@ public class Cuoiky {
               System.out.println(new_model);
               System.out.println(new_model.trainset.toSummaryString());
               System.out.println(new_model.testset.toSummaryString());
+              //Export file arff from data testset
+              ArffSaver exportData = new ArffSaver();
+              exportData.setInstances(new_model.testset);
+              exportData.setFile(new File("D:\\testset.arff"));
+              exportData.writeBatch();
    }
 }
